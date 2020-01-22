@@ -1,0 +1,45 @@
+
+{%extends 'baseTemplate.html'%}
+
+{%block title%}videoConference{%endblock%}
+
+
+
+     {% block body %}
+
+
+
+{#b=window.open("","me","width=100, height=100")#}
+{#b.document.write("<iframe id="your-frame-id" width="100%" height="100vh"  frameborder="0" allow="microphone; camera"  allowfullscreen src={{video_link}} >")#}
+{#b.document.getElementById("mydiv")#}
+{#b.resizeTo(250, 250);#}
+{#b.moveTo(screen.width,screen.height)#}
+{#localStorage.setItem("existingWin", b)#}
+{#///a.CSS("z-index","1000");#}
+{#b.focus();#}
+
+<iframe id="your-frame-id" width="100%" height="100vh"  frameborder="0" allow="microphone; camera"  allowfullscreen src={{video_link}} >
+
+
+
+ <embed src="https://www.google.com/"
+               style="border:4px solid orange;" />
+<iframe id="inlineFrameExample" allow="" sandbox="allow-same-origin allow-scripts allow-top-navigation "
+    title="Inline Frame Example"
+    width="300"
+    height="200"
+        src="https://www.google.com/">
+
+{#    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">#}
+</iframe>
+             <iframe id="if1" width="100%" height="254" style="visibility:visible" src="http://www.google.com/custom?q=&btnG=Search" allow></iframe>
+
+<iframe src="https://www.google.com/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
+
+</iframe>
+<script>
+$(document).ready(function() {
+    window.open("mailto:chavindmungun014@gmail.com?subject=VideoLink&amp&body={{video_link}}");
+});
+</script>
+{%endblock%}

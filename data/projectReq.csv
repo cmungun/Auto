@@ -1,0 +1,12 @@
+id,Criterias,Description and implementation,view, style
+1,Template Inheritance,   Base Template is reused in all HTML and is constructed based off different components ,                                          documents, color:red
+2,Flask,                  Application is designed with Flask using only required modules and packages needed for its functioning,                          documents, color:blue
+3,Organization,          Templates are properly organized in templates folder - Images css are in Static Folder- database are in the date section ,        documents, color:yellow
+4.1,FlaskForms,            All forms are called by a FlaskForm with some restrictions and Proper post and get methods are called appropriately ,             contactRecommendation, color:green4,FlaskForms,            All forms are called by a FlaskForm with some restrictions and Proper post and get methods are called appropriately ,             contactRecommendation, color:green
+4.2,Form validation,       All forms have validation and necessary information are displayed on top in case of not respecting the criterias.,             contactRecommendation, color:green4,FlaskForms,            All forms are called by a FlaskForm with some restrictions and Proper post and get methods are called appropriately ,             contactRecommendation, color:green
+5,Storage ,              I am implementing a database which autoinitialize/autocreates itself in the beginning(if it doesn't exist),                       protected, color:purple
+6.1,Forms,             1 form for the recommendation and complain option and 1 form to send a videoCall request to me ,                                  videoRequest ,color:wheat
+6.2,Lists,             1 table in Gallery and users 1 list showing requirements fulfilling for this project,                                              documents,          color:olive
+6.3,User login,         User Login is every user in the database and one of them is Thomas:1234ABCD and once login, special div shows on top,                                                      login  , color:pink
+6.4,Special Features,   Once login in you will see the videoConference feature which allows you to send me an email to videcall me on the spot ,         videoRequest  , color:pink
+6.5,Special Features,   An ajax request to get all Users in a database,                                                                                 protected  , color:pink

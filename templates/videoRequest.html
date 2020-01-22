@@ -1,0 +1,118 @@
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(class="form-control",**kwargs)|safe }}
+
+{% endmacro %}
+
+{%extends 'baseTemplate.html'%}
+
+{%block title%}Recommendation{%endblock%}
+
+
+
+{% block body %}
+
+<div class ="contactUs">
+
+<h1  class=" text-center h1-responsive font-weight-bold text-center my-4" >Recommendation and Complaints</h1>
+
+
+<section class="mb-4 m-5 pb-5 ">
+
+
+
+    <!--Section description-->
+    <h5 class="text-center w-responsive mx-auto mb-5">Please fill in to video lall me<hr></h5>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact_recommendation_form" name="contact_recommendation_form" action="/videoRequest" method="POST">
+            {{ form.csrf_token }}
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            {{ render_field(form.name) }}
+
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            {{ render_field(form.year) }}
+
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+
+
+                          <label for="" class="mt-2">{{form.characteristic.label}}:</label>
+                              <ul type="none" class="">
+{#                                  {{form.characteristic.label( type="none" ,class="") }}#}
+
+                                {% for characteristic in form.characteristic %}
+
+                                    <li class="d-md-inline mr-5 "><a>{{ characteristic }}{{ characteristic.label }}</a></li>
+
+
+                                {% endfor %}
+                              </ul>
+{#                          {{form.characteristic(type="none" ,class="list-inline" ,li_classes='ourClasses')}}#}
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            {{ render_field(form.picture) }}
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <br>
+                <input class="btn btn-primary" type="submit" class="button" value="Send"/>
+
+            </form>
+
+
+            <div class="status"></div>
+        </div>
+
+
+</section>
+
+
+
+
+</div>
+
+
+{%endblock%}

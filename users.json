@@ -1,0 +1,27 @@
+{
+    "ben": {
+        "username": "ben",
+        "password": "ben",
+        "email": "ben@gmail.com"
+    },
+    "ben123": {
+        "username": "ben123",
+        "password": "ben123",
+        "email": "ben123@gmail.com"
+    },
+    "jessie1": {
+        "username": "jessie1",
+        "password": "jessie2",
+        "email": "jessie2@gmail.com"
+    },
+    "ch": {
+        "username": "ch",
+        "password": "ch",
+        "email": "ch"
+    },
+    "rob": {
+        "username": "rob",
+        "password": "rob",
+        "email": "rob"
+    }
+}

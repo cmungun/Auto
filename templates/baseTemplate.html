@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta http-equiv="x-frame-options" content="allow"/>
+    <title>{% block title %} My Weblog{% endblock %}</title>
+
+    {% block style %}
+    {% include '/baseTemplateComponents/imports/imports.html' %}
+
+    {% endblock %}
+
+    {% endblock %}
+</head>
+<body>
+{% if session['username'] != NULL %}
+    {% include '/baseTemplateComponents/activeUser.html' %}
+{% endif %}
+
+    {% include '/baseTemplateComponents/navigation.html' %}
+    <div class="container-fuild contentBody">
+
+        {% include '/baseTemplateComponents/message.html' %}
+
+         {% block body %}
+
+        {% endblock %}
+    </div>
+
+
+{% include '/baseTemplateComponents/footer.html' %}
+</body>
+
+
+
+</html>

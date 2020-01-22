@@ -1,0 +1,65 @@
+
+{%extends 'baseTemplate.html'%}
+
+{%block title%}Timeline{%endblock%}
+
+
+
+     {% block body %}
+
+<h3>Click to get an a live up to date result of the users on the system </h3>
+         <a id= "showUser" class="btn btn-secondary container-fluid"><span class="glyphicon glyphicon-search"></span> <i class="material-icons">search</i> get All User</a>
+{#<h3>current_user.id: {{ current_user.id }}</h3>#}
+{#<h3>current_user.is_authenticated: {{ current_user.is_authenticated }}</h3>#}
+ <div id="dynamicTable"></div>
+<script>
+$(document).ready(function() {
+     $('#showUser').on('click', function(event) {
+       $.ajax({
+          data : {},
+             type : 'GET',
+             url : '/getAllUsers'
+            }).done(function(data)
+                {
+                tableDesign = "";
+                var jsonData = data;
+                tableDesign += "<table border='1' class=\"table table-dark\">";
+                tableDesign += "<thead class=\"text-uppercase thead-light\"><tr>";
+                for (var prop in jsonData[0])
+                    {
+                    if (jsonData[0].hasOwnProperty(prop))
+                        {
+                        tableDesign += "<th>" + prop + "</th>";
+                        }
+                    }
+                tableDesign += "</tr></thead>";
+                tableDesign += "<tbody>";
+
+                for(var obj in jsonData)
+                {
+                    tableDesign += "<tr>";
+                    if(jsonData.hasOwnProperty(obj))
+                    {
+                        for(var prop in jsonData[obj])
+                        {
+                            if(jsonData[obj].hasOwnProperty(prop))
+                            {
+                            tableDesign += "<td>" + jsonData[obj][prop] + "</td>";
+                            }
+                        }
+                    }
+                tableDesign += "</tr>";
+                }
+
+                tableDesign += "</tbody>";
+                tableDesign += "</table>"
+
+                document.getElementById("dynamicTable").innerHTML = tableDesign;
+
+          });
+       console.log("got data")
+      event.preventDefault();
+      });
+});
+</script>
+{%endblock%}

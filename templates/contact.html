@@ -1,0 +1,140 @@
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(class="form-control",**kwargs)|safe }}
+{#  {% if field.errors %}#}
+{#    {% for error in field.errors %}#}
+{#      {{ error }}#}
+{#    {% endfor %}#}
+{#  {% endif %}#}
+{% endmacro %}
+
+{%extends 'baseTemplate.html'%}
+
+{%block title%}Recommendation{%endblock%}
+
+
+
+{% block body %}
+
+<div class ="contactUs">
+
+<h1  class=" text-center h1-responsive font-weight-bold text-center my-4" >Recommendation and Complaints</h1>
+
+
+<section class="mb-4 m-5 pb-5 ">
+
+
+
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">If you are here, you surely know me or seeking to know about me? Well , not hesitate to directly criticise me or website anonymously or authentified.
+        Feedback is crucial to me. &spades;</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact_recommendation_form" name="contact_recommendation_form" action="/contactRecommendation" method="POST">
+            {{ form.csrf_token }}
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            {{ render_field(form.name) }}
+{#                            {{ form.name.label(class="")}}#}
+{#                            {{ form.name(class="form-control")}}#}
+{#                            <input type="text" id="name" name="name" class="form-control">#}
+{#                            <label for="name" class="">Your name</label>#}
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            {{ render_field(form.email) }}
+{#                            {{ form.email.label(class="")}}#}
+{#                            {{ form.email(class="form-control")}}#}
+{#                            <input type="text" id="email" name="email" class="form-control">#}
+{#                            <label for="email" class="">Your email</label>#}
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            {{ render_field(form.subject) }}
+{#                            {{ form.subject.label(class="")}}#}
+{#                            {{ form.subject(class="form-control")}}#}
+{#                            <input type="text" id="subject" name="subject" class="form-control">#}
+{#                            <label for="subject" class="">Subject</label>#}
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            {{ render_field(form.message) }}
+{#                            {{ form.message.label(class="")}}#}
+{#                            {{ form.message(class="form-control")}}#}
+{#                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>#}
+{#                            <label for="message">Your message</label>#}
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <br>
+                <input class="btn btn-primary" type="submit" class="button" value="Send"/>
+
+            </form>
+
+{#            <div class="text-center text-md-left">#}
+{#                <a class="btn btn-primary FormErrors" onclick="document.getElementById('contact_recommendation_form').submit();">Send</a>#}
+{#            </div>#}
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="material-icons">place</i>
+                    <p>Montreal Canada</p>
+                </li>
+
+                <li><i class="material-icons">phone</i>
+                    <p>+ 111 222 333</p>
+                </li>
+
+                <li><i class="material-icons">mail</i>
+                    <p>Concordia.ca</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+
+
+
+
+</div>
+
+
+{%endblock%}

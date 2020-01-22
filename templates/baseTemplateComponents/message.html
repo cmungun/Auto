@@ -1,0 +1,28 @@
+{% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category}}">
+            {% if  message is mapping %}
+                {% for  error in message %}
+{#                    {{ message}}#}
+                    {{ error[0]|upper}}{{error[1:] }}:-
+                    {% for  error1 in message[error] %}
+                        <ul>
+                            <li> {{ error1  }} </li>
+                            {% if message[error][error1] %}
+                                <li>{{ message[error][error1] }}</li>
+                            {% endif %}
+                        </ul>
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+                {% for category, message in messages %}
+                {{ message }}
+                {% endfor %}
+            {% endif %}
+
+        {% endfor %}
+        </div>
+{% endif %}
+
+
+

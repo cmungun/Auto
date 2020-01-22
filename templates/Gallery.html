@@ -1,0 +1,37 @@
+
+{%extends 'baseTemplate.html'%}
+
+{%block title%}Timeline{%endblock%}
+
+
+
+     {% block body %}
+<h1  class=" text-center" >Gallery</h1>
+   <div class=" container table-responsive">
+<table border="1" class ="table-striped table table-hover">
+
+    <thead>
+    <tr>
+        <th>Event Name </th>
+        <th>Description</th>
+        <th>Picture</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Day at the beach</td>
+        <td>Family day at La cambuse Beach in Mauritius</td>
+        <td><img src="/static/beach.jpg" alt="Beach Outing with Family" height="42" width="42"></td>
+    </tr>
+	<tr>
+        <td>Sunset in Hawaii</td>
+        <td>Sunset in Hawaii</td>
+        <td><img src="/static/new1.jpg" alt="Sunset in Hawaii" height="42" width="42"></td>
+    </tr>
+
+
+    </tbody>
+</table>
+   </div>
+
+{%endblock%}
